@@ -1,0 +1,41 @@
+.nav {
+  flex-grow: 1;
+
+  & &__list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 2rem;
+  }
+
+  & &__list-item {
+    height: 88px;
+  }
+
+  & &__list-item > a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    text-decoration: none;
+    color: var(--clr-dark-grayish-blue);
+    position: relative;
+  }
+
+  & &__list-item > a:before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    background-color: var(--clr-orange);
+    bottom: 0%;
+    transition: width 0.25s ease;
+  }
+
+  & &__list-item > a:hover {
+    color: var(--clr-black);
+  }
+
+  & &__list-item > a:hover:before {
+    width: 100%;
+  }
+}
