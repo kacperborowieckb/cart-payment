@@ -1,0 +1,19 @@
+.gallery {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 450px;
+
+  & &__main-img {
+    border-radius: 24px;
+  }
+
+  & &__thumbnail {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+  }
+
+  & &__thumbnail-img {
+    border-radius: 12px;
+  }
+}

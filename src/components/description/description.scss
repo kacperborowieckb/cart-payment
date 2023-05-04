@@ -1,0 +1,61 @@
+.description {
+  max-width: 500px;
+  display: grid;
+  place-content: center;
+
+  & &__company {
+    text-transform: uppercase;
+    color: var(--clr-orange);
+    font-size: 0.9rem;
+    font-weight: var(--fw-bold);
+  }
+
+  & &__title {
+    font-size: 3rem;
+    line-height: 120%;
+    font-weight: var(--fw-bold);
+  }
+
+  & &__desc {
+    color: var(--clr-dark-grayish-blue);
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+  }
+
+  & &__price {
+    margin-top: 0.25rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  & &__current-price {
+    font-size: 1.8rem;
+    font-weight: var(--fw-bold);
+  }
+
+  & &__discount {
+    background-color: var(--clr-pale-orange);
+    color: var(--clr-orange);
+    font-weight: var(--fw-bold);
+    padding: 0.15rem 0.5rem;
+    border-radius: 6px;
+  }
+
+  & &__old-price {
+    color: var(--clr-grayish-blue);
+    position: relative;
+    display: inline-block;
+    font-weight: var(--fw-bold);
+  }
+
+  & &__old-price:before {
+    content: "";
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    left: -5%;
+    right: -5%;
+    background-color: var(--clr-grayish-blue);
+  }
+}
