@@ -8,7 +8,7 @@
     height: 100%;
     display: flex;
     align-items: center;
-    gap: 2rem;
+    width: 180px;
     background-color: var(--clr-light-grayish-blue);
     border-radius: 12px;
   }
@@ -23,6 +23,8 @@
 
   & &__current-value {
     font-weight: var(--fw-bold);
+    flex-grow: 1;
+    text-align: center;
   }
 
   & &__main-button {

@@ -1,6 +1,6 @@
-import Description from "../components/description/Description"
-import Gallery from "../components/gallery/Gallery"
-import "./main.scss"
+import Description from '../components/description/Description';
+import Gallery from '../components/gallery/Gallery';
+import './main.scss';
 
 const main = () => {
   return (
@@ -8,7 +8,7 @@ const main = () => {
       <Gallery />
       <Description />
     </main>
-  )
-}
+  );
+};
 
-export default main
+export default main;

@@ -5,6 +5,7 @@
 
   & &__main-img {
     border-radius: 24px;
+    cursor: pointer;
   }
 
   & &__thumbnail {
@@ -15,5 +16,10 @@
 
   & &__thumbnail-img {
     border-radius: 12px;
+    cursor: pointer;
+  }
+
+  & &__thumbnail-img:hover {
+    opacity: 0.6;
   }
 }

@@ -8,6 +8,11 @@
   margin: 0;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -37,4 +42,8 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+}
+
+#root {
+  height: 100%;
 }
