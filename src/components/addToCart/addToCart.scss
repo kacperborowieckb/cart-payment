@@ -21,6 +21,10 @@
     height: 100%;
   }
 
+  & &__button:hover {
+    opacity: 0.6;
+  }
+
   & &__current-value {
     font-weight: var(--fw-bold);
     flex-grow: 1;
