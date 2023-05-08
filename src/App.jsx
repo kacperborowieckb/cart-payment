@@ -1,17 +1,15 @@
-import { useState } from "react"
-import Header from "./components/header/Header"
-import Main from "./pages/main"
-import "./styles/main.scss"
+import Header from './components/header/Header';
+import Main from './pages/Main';
+import './styles/main.scss';
+import { DataProvider } from './context/DataContext';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
+    <DataProvider>
       <Header />
       <Main />
-    </>
-  )
+    </DataProvider>
+  );
 }
 
-export default App
+export default App;

@@ -1,0 +1,19 @@
+.cart {
+  position: relative;
+
+  & > img {
+    cursor: pointer;
+  }
+
+  & &__value {
+    font-weight: var(--fw-bold);
+    font-size: 0.7rem;
+    color: var(--clr-white);
+    position: absolute;
+    top: -50%;
+    right: -35%;
+    background-color: var(--clr-orange);
+    padding: 0px 6px;
+    border-radius: 8px;
+  }
+}

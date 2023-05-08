@@ -1,31 +1,52 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import './addToCart.scss';
+import DataContext from '../../context/DataContext';
 
 const AddToCart = () => {
-  const [value, setValue] = useState(0);
+  const { value, setValue, cartItems, setCartItems } = useContext(DataContext);
 
-  const removeFromCart = () => {
+  const decreaseValue = () => {
     if (value > 0) {
       setValue(value - 1);
     }
   };
 
-  const addToCart = () => {
+  const increaseValue = () => {
     setValue(value + 1);
+  };
+
+  const addToCart = () => {
+    let items = cartItems;
+    if (items.some((item) => (item.name = 'boots'))) {
+      items.map((item) => {
+        if (item.name === 'boots') item.value += value;
+      });
+    } else {
+      items = [
+        ...items,
+        {
+          name: 'boots',
+          value: value,
+        },
+      ];
+    }
+    localStorage.setItem('cartItems', JSON.stringify(items));
+    setCartItems(items);
+    setValue(0);
   };
 
   return (
     <section className="add-to-cart">
       <section className="add-to-cart__value">
-        <button className="add-to-cart__minus add-to-cart__button " onClick={removeFromCart}>
+        <button className="add-to-cart__minus add-to-cart__button " onClick={decreaseValue}>
           <img src="/icon-minus.svg" alt="minus icon" />
         </button>
         <div className="add-to-cart__current-value">{value}</div>
-        <button className="add-to-car__plus add-to-cart__button" onClick={addToCart}>
+        <button className="add-to-car__plus add-to-cart__button" onClick={increaseValue}>
           <img src="/icon-plus.svg" alt="plus icon" />
         </button>
       </section>
-      <button className="add-to-cart__main-button">
+      <button className="add-to-cart__main-button" onClick={addToCart} disabled={value === 0}>
         <img src="/icon-cart.svg" alt="car img" />
         Add to cart
       </button>
