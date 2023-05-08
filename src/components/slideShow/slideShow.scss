@@ -9,6 +9,12 @@
 
   & &__content {
     position: relative;
+    --max-width: 600px;
+    max-width: var(--max-width);
+  }
+
+  & &__main-gallery {
+    position: relative;
   }
 
   & &__close {
@@ -72,7 +78,32 @@
   }
 
   & &__img {
-    max-width: 600px;
     border-radius: 24px;
+  }
+
+  & &__thumbnail {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    padding-top: 2rem;
+  }
+
+  & &__thumbnail-container {
+    position: relative;
+    border-radius: 12px;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  & &__thumbnail-container:after {
+    content: '';
+    position: absolute;
+    inset: 0px 0px 0px 0px;
+    background-color: inherit;
+    opacity: 0.4;
+  }
+
+  & &__thumbnail-container:hover:after {
+    background-color: white;
   }
 }

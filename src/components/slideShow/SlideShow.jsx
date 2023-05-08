@@ -36,14 +36,36 @@ const SlideShow = ({ setIsOpen, images, currentPhoto }) => {
   return (
     <div className="slide-show" ref={background}>
       <section className="slide-show__content">
-        <button onClick={() => setIsOpen(false)} className="slide-show__close"></button>
-        <img src={images[openedPhoto] + '.jpg'} alt="boots photo" className="slide-show__img" />
-        <button className="slide-show__previous" onClick={handlePrevious}>
-          <img src="/icon-previous.svg" alt="previous photo" />
-        </button>
-        <button className="slide-show__next" onClick={handleNext}>
-          <img src="/icon-next.svg" alt="next photo" />
-        </button>
+        <section className="slide-show__main-gallery">
+          <button onClick={() => setIsOpen(false)} className="slide-show__close"></button>
+          <img src={images[openedPhoto] + '.jpg'} alt="boots photo" className="slide-show__img" />
+          <button className="slide-show__previous" onClick={handlePrevious}>
+            <img src="/icon-previous.svg" alt="previous photo" />
+          </button>
+          <button className="slide-show__next" onClick={handleNext}>
+            <img src="/icon-next.svg" alt="next photo" />
+          </button>
+        </section>
+        <section className="slide-show__thumbnail">
+          {images.map((photo, i) => (
+            <div
+              onClick={() => setOpenedPhoto(i)}
+              className="slide-show__thumbnail-container"
+              key={i}
+              style={
+                openedPhoto === i
+                  ? { outline: '3px solid var(--clr-orange)', backgroundColor: 'white' }
+                  : { outline: 'none' }
+              }
+            >
+              <img
+                src={photo + '-thumbnail.jpg'}
+                alt="boots img"
+                className="slide-show__thumbnail-img"
+              />
+            </div>
+          ))}
+        </section>
       </section>
     </div>
   );
