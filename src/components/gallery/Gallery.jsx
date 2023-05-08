@@ -22,6 +22,12 @@ const Gallery = () => {
     }
   };
 
+  const openSlideShow = () => {
+    if (window.innerWidth > 850) {
+      setIsOpen(true);
+    }
+  };
+
   return (
     <aside className="gallery">
       <button className="gallery__previous" onClick={handlePrevious}>
@@ -31,7 +37,7 @@ const Gallery = () => {
         src={images[currentPhoto] + '.jpg'}
         alt="boots img"
         className="gallery__main-img"
-        onClick={() => setIsOpen(true)}
+        onClick={openSlideShow}
       />
       <button className="gallery__next" onClick={handleNext}>
         <img src="/icon-next.svg" alt="Next button" />

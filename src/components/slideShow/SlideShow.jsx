@@ -3,9 +3,9 @@ import './slideShow.scss';
 import DataContext from '../../context/DataContext';
 
 const SlideShow = () => {
+  const { setIsOpen, images, currentPhoto } = useContext(DataContext);
   const [openedPhoto, setOpenedPhoto] = useState(currentPhoto);
   const background = useRef();
-  const { setIsOpen, images, currentPhoto } = useContext(DataContext);
 
   const handlePrevious = () => {
     if (openedPhoto === 0) {
