@@ -6,6 +6,7 @@
   gap: 3rem;
   border-bottom: 1px solid var(--clr-grayish-blue);
   padding: 0;
+  min-height: 88px;
 
   & > img {
     height: 100%;
@@ -19,5 +20,27 @@
 
   & &__profile:hover {
     outline: 2px solid var(--clr-orange);
+  }
+
+  & &__open {
+    display: none;
+  }
+
+  @media (max-width: 900px) {
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 850px) {
+    border: none;
+  }
+
+  @media (max-width: 768px) {
+    & &__open {
+      display: block;
+    }
+
+    & &__logo-container {
+      flex-grow: 1;
+    }
   }
 }

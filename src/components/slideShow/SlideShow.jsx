@@ -1,9 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import './slideShow.scss';
+import DataContext from '../../context/DataContext';
 
-const SlideShow = ({ setIsOpen, images, currentPhoto }) => {
+const SlideShow = () => {
   const [openedPhoto, setOpenedPhoto] = useState(currentPhoto);
   const background = useRef();
+  const { setIsOpen, images, currentPhoto } = useContext(DataContext);
 
   const handlePrevious = () => {
     if (openedPhoto === 0) {

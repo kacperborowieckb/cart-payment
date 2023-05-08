@@ -1,9 +1,13 @@
-import "./nav.scss"
-import "../../styles/main.scss"
+import './nav.scss';
+import '../../styles/main.scss';
 
-const Nav = () => {
+const Nav = ({ isNavOpen, setIsNavOpen }) => {
   return (
-    <nav className="nav">
+    <nav className="nav" style={{ transform: isNavOpen && 'translateX(100%)' }}>
+      {isNavOpen && <div className="nav__background"></div>}
+      <button className="nav__close" onClick={() => setIsNavOpen(false)}>
+        <img src="/icon-close.svg" alt="Close button" />
+      </button>
       <ul className="nav__list">
         <li className="nav__list-item">
           <a href="#">Collections</a>
@@ -22,7 +26,7 @@ const Nav = () => {
         </li>
       </ul>
     </nav>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;

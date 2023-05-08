@@ -1,6 +1,6 @@
 .cart-items {
   position: absolute;
-  top: 180%;
+  top: 200%;
   left: 50%;
   translate: -50%;
   display: flex;
@@ -9,6 +9,7 @@
   width: 360px;
   min-height: 200px;
   box-shadow: 0px 0px 12px 0px var(--clr-lightbox-bg);
+  z-index: 1;
 
   & &__header {
     padding: 1.5rem;
@@ -65,5 +66,15 @@
     border-radius: 12px;
     padding: 0.75rem 0;
     cursor: pointer;
+  }
+
+  @media ((min-width: 600px) and (max-width: 1400px)) {
+    translate: -80%;
+  }
+
+  @media (max-width: 600px) {
+    position: fixed;
+    top: 6.5rem;
+    width: 95%;
   }
 }

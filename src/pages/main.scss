@@ -4,4 +4,10 @@
   justify-content: center;
   align-items: center;
   margin-top: 6rem;
+
+  @media (max-width: 850px) {
+    flex-direction: column;
+    margin-top: 0rem;
+    gap: 2rem;
+  }
 }

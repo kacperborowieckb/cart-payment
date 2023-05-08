@@ -2,6 +2,7 @@
   display: grid;
   gap: 1.5rem;
   max-width: 450px;
+  position: relative;
 
   & &__main-img {
     border-radius: 24px;
@@ -21,5 +22,57 @@
 
   & &__thumbnail-img:hover {
     opacity: 0.6;
+  }
+
+  & &__next,
+  & &__previous {
+    background-color: var(--clr-white);
+    border-radius: 50%;
+    border: none;
+    display: none;
+    position: absolute;
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    aspect-ratio: 1/1;
+  }
+
+  & &__next > img,
+  & &__previous > img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+  }
+
+  @media (max-width: 850px) {
+    width: 100vw;
+    height: calc(100vw - 80px);
+    overflow: hidden;
+    max-width: 600px;
+    max-height: 500px;
+    object-position: center;
+
+    & &__main-img {
+      border-radius: 0;
+    }
+
+    & &__thumbnail {
+      display: none;
+    }
+    & &__next,
+    & &__previous {
+      display: block;
+      top: 50%;
+      translate: 0% -50%;
+    }
+
+    & &__next {
+      right: 4%;
+    }
+
+    & &__previous {
+      left: 4%;
+    }
   }
 }

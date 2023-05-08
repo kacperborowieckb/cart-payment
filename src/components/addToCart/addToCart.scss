@@ -52,4 +52,18 @@
   & &__main-button > img {
     filter: brightness(0) invert(1);
   }
+
+  @media (max-width: 400px) {
+    flex-direction: column;
+    height: auto;
+
+    & &__value {
+      width: auto;
+    }
+
+    & &__value,
+    & &__main-button {
+      padding: 1rem 0;
+    }
+  }
 }

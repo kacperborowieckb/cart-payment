@@ -50,12 +50,29 @@
   }
 
   & &__old-price:before {
-    content: "";
+    content: '';
     height: 1px;
     position: absolute;
     top: 50%;
     left: -5%;
     right: -5%;
     background-color: var(--clr-grayish-blue);
+  }
+
+  @media (max-width: 420px) {
+    & &__title {
+      font-size: 2rem;
+      line-height: 120%;
+      font-weight: var(--fw-bold);
+    }
+
+    & &__price-section {
+      display: flex;
+      align-items: center;
+    }
+
+    & &__price {
+      flex-grow: 1;
+    }
   }
 }
