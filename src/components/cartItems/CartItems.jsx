@@ -37,7 +37,7 @@ const CartItems = () => {
                 </section>
               </section>
               <button className="cart-items__delete" onClick={() => deleteItem(item.name)}>
-                <img src="/icon-delete.svg" alt="trash icon" />
+                <img src="/icon-delete.svg" alt="trash icon" className="cart-items__trash-icon" />
               </button>
             </section>
           ))}
