@@ -1,4 +1,4 @@
-import Product from './pages/Product/Product';
+import Product from './pages/product/Product';
 import Layout from './components/layout/Layout';
 import Success from './pages/success/Success';
 import Cancel from './pages/cancel/Cancel';
