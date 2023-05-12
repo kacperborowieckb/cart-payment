@@ -1,0 +1,23 @@
+.cancel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  gap: 2rem;
+
+  & &__header {
+    color: var(--clr-error);
+  }
+
+  & &__button {
+    background: var(--clr-orange);
+    border: none;
+    border-radius: 12px;
+    color: var(--clr-white);
+    font-weight: var(--fw-bold);
+    font-size: 1.2rem;
+    padding: 0.6rem 1.5rem;
+    cursor: pointer;
+  }
+}
