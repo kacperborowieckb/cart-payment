@@ -10,7 +10,7 @@ const Toast = () => {
       if (toastList.length > 0) {
         setToastList(toastList.slice(1));
       }
-    }, 3000);
+    }, 2000);
 
     return () => {
       clearTimeout(timeout);
@@ -19,7 +19,7 @@ const Toast = () => {
 
   return (
     <section className="toast">
-      {toastList.map(({ type, content }, i) => (
+      {toastList.slice(-6).map(({ type, content }, i) => (
         <div
           className="toast__item"
           style={{ backgroundColor: type === 'error' ? 'var(--clr-error)' : 'var(--clr-success)' }}
