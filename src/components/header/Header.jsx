@@ -3,6 +3,7 @@ import Cart from '../cart/Cart';
 import Nav from '../nav/Nav';
 import './header.scss';
 import DataContext from '../../context/DataContext';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -30,9 +31,11 @@ const Header = () => {
   return (
     <header className="header">
       <img src="/icon-menu.svg" alt="Menu icon" onClick={openNav} className="header__open" />
-      <div className="header__logo-container">
-        <img src="/logo.svg" alt="logo" className="header__logo" />
-      </div>
+      <Link to={'/'}>
+        <div className="header__logo-container">
+          <img src="/logo.svg" alt="logo" className="header__logo" />
+        </div>
+      </Link>
       <Nav isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
       <Cart />
       <img src="/image-avatar.png" alt="profile avatar" className="header__profile" />

@@ -12,7 +12,11 @@ const Cart = () => {
 
   useEffect(() => {
     const closeCart = (e) => {
-      if (!e.target.className.includes('cart') && !e.target.className.includes('cart-items')) {
+      if (
+        !e.target.className.includes('cart') &&
+        !e.target.className.includes('cart-items') &&
+        !e.target.className.includes('checkout-button')
+      ) {
         setIsCartOpen(false);
       }
     };

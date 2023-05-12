@@ -3,7 +3,7 @@ import './addToCart.scss';
 import DataContext from '../../context/DataContext';
 
 const AddToCart = () => {
-  const { value, setValue, cartItems, setCartItems } = useContext(DataContext);
+  const { value, setValue, cartItems, setCartItems, addToast } = useContext(DataContext);
 
   const decreaseValue = () => {
     if (value > 0) {
@@ -33,6 +33,7 @@ const AddToCart = () => {
     localStorage.setItem('cartItems', JSON.stringify(items));
     setCartItems(items);
     setValue(0);
+    addToast({ type: 'success', content: 'Successfully added' });
   };
 
   return (

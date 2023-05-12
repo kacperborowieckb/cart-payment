@@ -1,9 +1,10 @@
 import { useContext } from 'react';
 import './cartItems.scss';
 import DataContext from '../../context/DataContext';
+import CheckoutButton from '../checkoutButton/CheckoutButton';
 
 const CartItems = () => {
-  const { cartItems, setCartItems } = useContext(DataContext);
+  const { cartItems, setCartItems, addToast } = useContext(DataContext);
 
   const getFullPrice = (item) => {
     let value = item.value * 125.0;
@@ -15,6 +16,7 @@ const CartItems = () => {
     let items = cartItems.filter((item) => item.name !== name);
     setCartItems(items);
     localStorage.setItem('cartItems', JSON.stringify(items));
+    addToast({ type: 'success', content: 'Removed from cart' });
   };
 
   return (
@@ -41,7 +43,7 @@ const CartItems = () => {
               </button>
             </section>
           ))}
-          <button className="cart-items__checkout">Checkout</button>
+          <CheckoutButton cartItems={cartItems} />
         </section>
       ) : (
         <p className="cart-items__empty">Your cart is empty.</p>

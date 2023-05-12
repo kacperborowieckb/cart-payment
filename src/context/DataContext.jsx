@@ -8,7 +8,12 @@ export const DataProvider = ({ children }) => {
   const [currentPhoto, setCurrentPhoto] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [toastList, setToastList] = useState([]);
   const images = ['image-product-1', 'image-product-2', 'image-product-3', 'image-product-4'];
+
+  const addToast = (newToast) => {
+    setToastList([...toastList, newToast]);
+  };
 
   return (
     <DataContext.Provider
@@ -24,6 +29,9 @@ export const DataProvider = ({ children }) => {
         images,
         isCartOpen,
         setIsCartOpen,
+        toastList,
+        setToastList,
+        addToast,
       }}
     >
       {children}
